@@ -1,0 +1,1 @@
+export { MotivationCard } from './MotivationCard';

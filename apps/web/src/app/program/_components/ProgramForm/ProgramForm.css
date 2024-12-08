@@ -1,0 +1,66 @@
+@tailwind components;
+
+@layer components {
+    .legend-text {
+        margin-bottom: 36px;
+        max-width: 200px;
+        padding-top: 26px;
+        background-color: #fff;
+        font-size: 24px;
+        line-height: 108%;
+
+        @screen md {
+            margin-bottom: 76px;
+            max-width: 100%;
+            padding-right: 22px;
+            padding-top: 70px;
+            font-size: 36px;
+            line-height: 100%;
+        }
+    }
+
+    .legend-decoration {
+        position: relative;
+
+        &:after {
+            position: absolute;
+            top: -60px;
+            right: -20px;
+            z-index: -1;
+            content: '';
+            height: 2px;
+            width: 100%;
+            background: #68b738;
+        }
+
+        @screen md {
+            &:after {
+                top: -90px;
+                right: -70px;
+            }
+
+            &:before {
+                position: absolute;
+                top: -90px;
+                left: -70px;
+                z-index: -1;
+                content: '';
+                height: 2px;
+                width: 50px;
+                background: #68b738;
+            }
+        }
+    }
+
+    .legend-decoration--oneline {
+        &:after {
+            top: -48px;
+        }
+
+        @screen md {
+            &:after {
+                top: -90px;
+            }
+        }
+    }
+}

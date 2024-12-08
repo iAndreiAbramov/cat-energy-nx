@@ -1,0 +1,33 @@
+@tailwind components;
+
+@layer components {
+    .input-radio-label {
+        & > input + span {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            &:before {
+                content: '';
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border: 1px solid #CDCDCD;
+                border-radius: 50%;
+            }
+        }
+
+        & > input:checked + span:after {
+            content: '';
+            position: absolute;
+            left: 11px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #68B738;
+        }
+    }
+}

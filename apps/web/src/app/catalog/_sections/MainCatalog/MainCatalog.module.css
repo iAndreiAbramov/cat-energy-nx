@@ -1,0 +1,15 @@
+@tailwind components;
+
+@layer components {
+    .catalog-container {
+        @screen md {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        @screen xl {
+            padding-left: calc((100% - 1220px) / 2);
+            padding-right: calc((100% - 1220px) / 2);
+        }
+    }
+}

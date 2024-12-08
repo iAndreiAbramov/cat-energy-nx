@@ -1,0 +1,1 @@
+export { MapArticle } from './MapArticle';

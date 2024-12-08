@@ -1,0 +1,32 @@
+@tailwind components;
+
+@layer components {
+    .slider-button {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 125%;
+        text-transform: uppercase;
+        text-align: center;
+        color: #000;
+        cursor: pointer;
+        transition: opacity 0.3s linear;
+
+        &:hover {
+            opacity: 70%;
+        }
+
+        &:active {
+            opacity: 30%;
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    .slider-image {
+        width: 280px;
+        height: 232px;
+        object-fit: scale-down;
+    }
+}

@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .label-with-icon {
+        position: relative;
+
+        & svg {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            flex-shrink: 0;
+            width: 20px;
+        }
+    }
+
+    .input-text {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 10px 20px;
+        border: 1px solid #E7E7E7;
+        color: #444444;
+        font-size: 16px;
+        line-height: 1;
+        text-transform: uppercase;
+        font-weight: normal;
+        cursor: pointer;
+        transition: color 300ms;
+
+        &:focus-visible {
+            border-color: #444444;
+            outline: none;
+        }
+    }
+
+    .input-text--with-icon {
+        padding-right: 60px;
+    }
+
+    .input-text--error {
+        border: 1px solid #FF8282;
+
+        &:focus-visible {
+            border-color: #FF8282;
+        }
+    }
+
+    .error-text {
+        align-self: flex-end;
+        color: #FF8282;
+        font-size: 14px;
+        font-weight: normal;
+    }
+}

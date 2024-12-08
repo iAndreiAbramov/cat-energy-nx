@@ -1,9 +1,0 @@
-{
-  "name": "cat-energy-nx",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/cat-energy-nx",
-  "projectType": "application",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project cat-energy-nx --web",
-  "targets": {}
-}

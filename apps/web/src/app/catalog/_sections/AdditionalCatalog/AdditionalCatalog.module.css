@@ -1,0 +1,33 @@
+@tailwind components;
+
+@layer components {
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'title'
+            'list'
+            'gift';
+
+        @screen xl {
+            grid-template-columns: 1fr auto;
+            column-gap: 80px;
+            grid-template-areas:
+                'title title'
+                'list gift'
+        ;
+        }
+    }
+
+    .area-title {
+        grid-area: title;
+    }
+
+    .area-list {
+        grid-area: list;
+    }
+
+    .area-gift {
+        grid-area: gift;
+    }
+}

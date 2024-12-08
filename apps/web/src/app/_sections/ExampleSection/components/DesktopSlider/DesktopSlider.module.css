@@ -1,0 +1,25 @@
+@tailwind components;
+
+@layer components {
+    .slider-button {
+        padding-bottom: 4px;
+        padding-top: 4px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 125%;
+        text-transform: uppercase;
+        text-align: center;
+        color: #000;
+
+        @screen md {
+            border-bottom: 1px dotted rgba(0, 0, 0, 0.24);
+            font-size: 20px;
+        }
+    }
+
+    .slider-image {
+        width: 592px;
+        height: 512px;
+        object-fit: contain;
+    }
+}

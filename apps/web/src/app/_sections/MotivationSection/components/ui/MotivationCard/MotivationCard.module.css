@@ -1,0 +1,46 @@
+@tailwind components;
+
+@layer components {
+    .grid-areas {
+        display: grid;
+        grid-template-columns: 68px 1fr;
+        grid-template-areas:
+            'image title'
+            'text text'
+            'link link';
+
+        @screen md {
+            grid-template-columns: 1fr 264px;
+            column-gap: 54px;
+            grid-template-areas:
+                'title image'
+                'text image'
+                'link link';
+        }
+
+        @screen xl {
+            grid-template-columns: 134px 1fr;
+            column-gap: 0;
+            grid-template-areas:
+            'image title'
+            'text text'
+            'link link';
+        }
+    }
+
+    .area-image {
+        grid-area: image;
+    }
+
+    .area-title {
+        grid-area: title;
+    }
+
+    .area-text {
+        grid-area: text;
+    }
+
+    .area-link {
+        grid-area: link;
+    }
+}

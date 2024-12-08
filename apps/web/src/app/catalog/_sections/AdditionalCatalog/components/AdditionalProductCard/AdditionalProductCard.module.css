@@ -1,0 +1,43 @@
+@tailwind components;
+
+@layer components {
+    .grid-layout {
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        grid-template-areas:
+            'name'
+            'list'
+            'button';
+
+        @screen md {
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr auto;
+            row-gap: 24px;
+            grid-template-areas:
+                'name list'
+                'button button';
+        }
+
+        @screen xl {
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 288px 244px;
+            column-gap: 38px;
+            grid-template-areas:
+                'name list button';
+        }
+    }
+
+    .area-name {
+        grid-area: name;
+    }
+
+    .area-list {
+        grid-area: list;
+    }
+
+    .area-button {
+        grid-area: button;
+    }
+}

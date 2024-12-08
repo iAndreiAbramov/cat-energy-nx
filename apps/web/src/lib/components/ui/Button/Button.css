@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .button {
+        @apply
+        flex items-center justify-center
+        px-[26px] py-[14px]
+        text-[20px] uppercase leading-none
+        transition-all duration-300
+        ;
+    }
+
+    .button--primary {
+        @apply
+        bg-btn-green hover:bg-btn-green-darker disabled:bg-btn-green-darker disabled:opacity-40
+        text-white  active:text-white/30
+        ;
+    }
+
+    .button--alter {
+        @apply
+        bg-btn-gray hover:bg-btn-gray-darker disabled:bg-btn-gray-darker
+        text-[#444444] active:text-[#444444]/30
+        ;
+    }
+
+    .button-icon {
+        @apply
+        flex items-center justify-center
+        hover:opacity-70 active:opacity-30
+        transition-all duration-300
+        [&>svg]:shrink-0
+        ;
+    }
+}
