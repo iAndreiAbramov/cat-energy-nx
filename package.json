@@ -2,7 +2,9 @@
   "name": "@cat-energy-nx/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start:cms": "nx serve cms"
+  },
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -12,12 +14,15 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-hook-form": "^7.53.1",
+    "react-router-dom": "5.3.4",
+    "styled-components": "5.3.3",
     "tailwind-merge": "^2.5.3",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.1.1",
+    "@eslint/compat": "1.1.1",
     "@eslint/js": "^9.8.0",
+    "@nx-extend/strapi": "^12.1.0",
     "@nx/eslint": "20.2.1",
     "@nx/eslint-plugin": "20.2.1",
     "@nx/jest": "20.2.1",

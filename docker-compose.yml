@@ -1,0 +1,15 @@
+services:
+  strapi_db_cat:
+    container_name: strapi_db_cat
+    image: postgres:14.2
+    restart: always
+    env_file:
+      - ./apps/cms/.env
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - ${DATABASE_PORT}:5432
+    volumes:
+      - ./.data/db:/var/lib/postgresql/data
