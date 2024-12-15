@@ -1,11 +1,11 @@
-import { StaticImageData } from 'next/image';
+import { IStrapiImage } from '@/strapi-api/types/i-strapi-image';
 
 export interface IProduct {
-	id: string;
-	image: StaticImageData;
-	productBrand: string;
-	productCategory: string;
-	productWeight: number;
-	productTaste: string;
-	productPrice: number;
+  id: number;
+  image: IStrapiImage;
+  productBrand: string;
+  productCategory: string;
+  productWeight: number;
+  productTaste: string;
+  productPrice: number;
 }

@@ -362,6 +362,48 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiMainProductMainProduct extends Schema.CollectionType {
+  collectionName: 'main_products';
+  info: {
+    singularName: 'main-product';
+    pluralName: 'main-products';
+    displayName: 'MainProduct';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    productBrand: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Cat Energy'>;
+    productCategory: Attribute.String & Attribute.Required;
+    productWeight: Attribute.Decimal &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
+    productTaste: Attribute.String & Attribute.Required;
+    productPrice: Attribute.Decimal &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::main-product.main-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::main-product.main-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -798,6 +840,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::main-product.main-product': ApiMainProductMainProduct;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

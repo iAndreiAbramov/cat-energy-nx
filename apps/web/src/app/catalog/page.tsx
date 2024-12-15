@@ -1,14 +1,16 @@
 import { AdditionalCatalog } from './_sections/AdditionalCatalog';
 import { MainCatalog } from './_sections/MainCatalog';
+import { fetchStrapi } from '@/strapi-api/fetch-strapi';
+import { StrapiRoute } from '@/strapi-api/strapi-route';
+import { IProduct } from '@/app/catalog/_sections/MainCatalog/i-product';
 
 export default async function PageCatalog() {
-	// const products = await fetch('http://localhost:1337/api/main-products').then((res) => res.json());
-	// console.log(products);
+  const products: IProduct[] = await fetchStrapi(StrapiRoute.MainProducts('*'));
 
-	return (
-		<>
-			<MainCatalog />
-			<AdditionalCatalog />
-		</>
-	);
+  return (
+    <>
+      <MainCatalog products={products} />
+      <AdditionalCatalog />
+    </>
+  );
 }

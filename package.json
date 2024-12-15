@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "up:db": "docker compose up -d",
+    "down:db": "docker compose down",
+    "start:web": "nx serve web",
     "start:cms": "nx serve cms"
   },
   "private": true,
