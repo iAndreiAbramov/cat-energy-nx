@@ -1,3 +1,52 @@
 {
-  "singleQuote": true
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "auto",
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "parser": "typescript",
+  "printWidth": 100,
+  "proseWrap": "preserve",
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": true,
+  "overrides": [
+    {
+      "files": [
+        "**/*.json",
+        ".prettierrc",
+        ".eslintrc"
+      ],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ],
+  "importOrder": [
+    "^react-[^(hook)].+$",
+    "^(react/(.*)$)|^(react$)",
+    "^next-.+$",
+    "^(next/(.*)$)|^(next$)",
+    "^@radix-ui/(.*)$",
+    "",
+    "^@/lib/hooks/.*",
+    "^@/lib/utils/.*",
+    "^@/lib/constants/.*",
+    "^@/lib/components/.*",
+    "^[@/]",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "<BUILTIN_MODULES>",
+    "",
+    "<TYPES>",
+    "",
+    ".*[.](css|scss)$"
+  ],
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@ianvs/prettier-plugin-sort-imports"
+  ]
 }

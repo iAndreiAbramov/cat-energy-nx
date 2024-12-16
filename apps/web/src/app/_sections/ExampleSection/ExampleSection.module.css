@@ -1,130 +1,130 @@
 @tailwind components;
 
 @layer components {
-    .section-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
             'title'
             'text'
             'list'
             'slider';
 
-        @screen xl {
-            grid-template-columns: 436px auto;
-            grid-template-rows: 180px 230px auto;
-            grid-template-areas:
+    @screen xl {
+      grid-template-columns: 436px auto;
+      grid-template-rows: 180px 230px auto;
+      grid-template-areas:
             'title slider'
             'text slider'
             'list slider';
-            justify-content: space-between;
-        }
+      justify-content: space-between;
     }
+  }
 
-    .area-title {
-        grid-area: title;
-    }
+  .area-title {
+    grid-area: title;
+  }
 
-    .area-text {
-        grid-area: text;
-    }
+  .area-text {
+    grid-area: text;
+  }
 
-    .area-list {
-        grid-area: list;
-    }
+  .area-list {
+    grid-area: list;
+  }
 
-    .area-slider {
-        grid-area: slider;
-    }
+  .area-slider {
+    grid-area: slider;
+  }
 
-    .dl-grid-layout {
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
+  .dl-grid-layout {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
         'first second'
         'third third';
-        column-gap: 32px;
-        row-gap: 32px;
+    column-gap: 32px;
+    row-gap: 32px;
 
-        @screen md {
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-areas:
+    @screen md {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
                 'first second third';
-            gap: 42px;
-        }
+      gap: 42px;
+    }
 
-        @screen xl {
-            grid-template-columns: 1fr 1fr;
-            grid-template-areas:
+    @screen xl {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
                 'first second'
                 'third third';
-        }
+    }
+  }
+
+  .first-area {
+    grid-area: first;
+  }
+
+  .second-area {
+    grid-area: second;
+  }
+
+  .third-area {
+    grid-area: third;
+  }
+
+  .bordered-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    border: 1px solid #CDCDCD;
+    border-radius: 4px;
+  }
+
+  .bordered-item_title {
+    position: absolute;
+    bottom: -6px;
+    transform: translateY(50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    max-width: 80px;
+    background-color: #EAEAEA;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    color: #444;
+
+    @screen md {
+      background-color: #FFFFFF;
+      font-size: 14px;
+      line-height: 100%;
     }
 
-    .first-area {
-        grid-area: first;
+    @screen xl {
+      background: #EAEAEA;
     }
+  }
 
-    .second-area {
-        grid-area: second;
+  .bordered-item_description {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+
+    @screen md {
+      font-size: 30px;
+      line-height: 123%;
     }
-
-    .third-area {
-        grid-area: third;
-    }
-
-    .bordered-item {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 16px;
-        width: 100%;
-        border: 1px solid #CDCDCD;
-        border-radius: 4px;
-    }
-
-    .bordered-item_title {
-        position: absolute;
-        bottom: -6px;
-        transform: translateY(50%);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 8px;
-        max-width: 80px;
-        background-color: #EAEAEA;
-        font-family: Arial, sans-serif;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1;
-        text-align: center;
-        color: #444;
-
-        @screen md {
-            background-color: #FFFFFF;
-            font-size: 14px;
-            line-height: 100%;
-        }
-
-        @screen xl {
-            background: #EAEAEA;
-        }
-    }
-
-    .bordered-item_description {
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 100%;
-        text-align: center;
-        color: #000;
-        text-transform: uppercase;
-
-        @screen md {
-            font-size: 30px;
-            line-height: 123%;
-        }
-    }
+  }
 }
