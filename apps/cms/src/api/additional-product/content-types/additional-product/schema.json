@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "additional_products",
+  "info": {
+    "singularName": "additional-product",
+    "pluralName": "additional-products",
+    "displayName": "AdditionalProduct"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "basicUnit": {
+      "type": "string",
+      "required": true
+    },
+    "priceRub": {
+      "type": "integer",
+      "required": true
+    },
+    "weightGram": {
+      "type": "integer"
+    }
+  }
+}

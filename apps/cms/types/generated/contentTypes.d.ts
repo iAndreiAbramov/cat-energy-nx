@@ -362,48 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiMainProductMainProduct extends Schema.CollectionType {
-  collectionName: 'main_products';
-  info: {
-    singularName: 'main-product';
-    pluralName: 'main-products';
-    displayName: 'MainProduct';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    productBrand: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'Cat Energy'>;
-    productCategory: Attribute.String & Attribute.Required;
-    productWeight: Attribute.Decimal &
-      Attribute.Required &
-      Attribute.DefaultTo<0>;
-    productTaste: Attribute.String & Attribute.Required;
-    productPrice: Attribute.Decimal &
-      Attribute.Required &
-      Attribute.DefaultTo<0>;
-    image: Attribute.Media<'images'> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::main-product.main-product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::main-product.main-product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -830,6 +788,82 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAdditionalProductAdditionalProduct
+  extends Schema.CollectionType {
+  collectionName: 'additional_products';
+  info: {
+    singularName: 'additional-product';
+    pluralName: 'additional-products';
+    displayName: 'AdditionalProduct';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    basicUnit: Attribute.String & Attribute.Required;
+    priceRub: Attribute.Integer & Attribute.Required;
+    weightGram: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::additional-product.additional-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::additional-product.additional-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMainProductMainProduct extends Schema.CollectionType {
+  collectionName: 'main_products';
+  info: {
+    singularName: 'main-product';
+    pluralName: 'main-products';
+    displayName: 'MainProduct';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    productBrand: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Cat Energy'>;
+    productCategory: Attribute.String & Attribute.Required;
+    productWeight: Attribute.Decimal &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
+    productTaste: Attribute.String & Attribute.Required;
+    productPrice: Attribute.Decimal &
+      Attribute.Required &
+      Attribute.DefaultTo<0>;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::main-product.main-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::main-product.main-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -840,7 +874,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::main-product.main-product': ApiMainProductMainProduct;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -849,6 +882,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::additional-product.additional-product': ApiAdditionalProductAdditionalProduct;
+      'api::main-product.main-product': ApiMainProductMainProduct;
     }
   }
 }

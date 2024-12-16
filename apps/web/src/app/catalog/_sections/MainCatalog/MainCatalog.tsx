@@ -5,6 +5,7 @@ import { IProduct } from '@/app/catalog/_sections/MainCatalog/i-product';
 
 import { MoreProductsCard } from './components/MoreProductsCard';
 import { ProductCard } from './components/ProductCard';
+import { clsx } from 'clsx';
 
 import styles from './MainCatalog.module.css';
 
@@ -22,15 +23,15 @@ export const MainCatalog: React.FC<{ products: IProduct[] }> = ({
       >
         Каталог продукции
       </h1>
-      <ul
-        className={cn(
-          `${styles['catalog-container']}`,
-          'md:grid md:grid-cols-2 md:gap-[60px]',
-          'xl:gap-x-20 xl:grid-cols-4 xl:gap-y-[60px]'
-        )}
-      >
-        {products?.length > 0 &&
-          products
+      {products?.length > 0 ? (
+        <ul
+          className={cn(
+            `${styles['catalog-container']}`,
+            'md:grid md:grid-cols-2 md:gap-[60px]',
+            'xl:gap-x-20 xl:grid-cols-4 xl:gap-y-[60px]'
+          )}
+        >
+          {products
             .sort((a, b) => a.id - b.id)
             .map(
               (
@@ -59,8 +60,18 @@ export const MainCatalog: React.FC<{ products: IProduct[] }> = ({
                 </li>
               )
             )}
-        <MoreProductsCard />
-      </ul>
+          <MoreProductsCard />
+        </ul>
+      ) : (
+        <p
+          className={clsx(
+            `${styles['catalog-container']}`,
+            'font-arial text-sm md:text-base'
+          )}
+        >
+          Здесь пока ничего нет
+        </p>
+      )}
     </section>
   );
 };
